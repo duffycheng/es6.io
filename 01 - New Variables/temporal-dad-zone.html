@@ -6,6 +6,7 @@
 </head>
 <body>
 <script>
+  // let 會hoist, 但是為宣告之前在temporal dead zone, 出現ReferenceError, 不像var是出現undefined
   console.log(pizza);
   const pizza = 'Deep Dish 🍕🍕🍕';
 

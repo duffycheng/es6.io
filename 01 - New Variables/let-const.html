@@ -6,15 +6,29 @@
 </head>
 <body>
 <script>
+  // 範圍內 同名參數只能let一次
+  // const 不能改變 or reassign
   const key = 'abc123';
   let points = 50;
   let winner = false;
 
+  if(points > 40){
+    // block 內參數和外面無關
+    let winner = true;
+  }
+
+  console.log(winner);
+
+  // object 裡可以assign 值
   const person = {
     name: 'Wes',
     age: 28
   }
 
+  person.age = 30;
+  console.log(person);
+
+  // 還沒完全支援
   const wes = Object.freeze(person);
 
 </script>
