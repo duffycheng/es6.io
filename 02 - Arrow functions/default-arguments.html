@@ -10,8 +10,10 @@
     return total + (total * tax) + (total * tip);
   }
 
-  const totalBill = calculateBill(100, undefined, 0.25);
-  console.log(totalBill);
+  const totalBill1 = calculateBill(100);
+  const totalBill2 = calculateBill(100, undefined, 0.25);
+  console.log(totalBill1);
+  console.log(totalBill2);
 </script>
 </body>
 </html>
