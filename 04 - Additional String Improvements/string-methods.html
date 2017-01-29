@@ -16,13 +16,19 @@ const model = 'x5';
 const colour = 'Royal Blue';
 
 // .startsWith()
+course.startsWith('RFB2');
+// 從第3個字開始
+flightNumber.startsWith('AC',3);
 
 // .endsWith()
-
+flightNumber.endsWith('jz');
+// 只數前11位
+accountNumber.endsWith('RT',11);
 // .includes()
+accountNumber.includes('AC');
+// .repeat(), repeat a piece of text
 
-// .repeat()
-
+// 右邊靠右對齊 補齊左邊空格的計算
 function leftPad(str, length = 20) {
   return `→ ${' '.repeat(length - str.length)}${str}`;
 }

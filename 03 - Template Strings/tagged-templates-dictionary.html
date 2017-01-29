@@ -24,6 +24,24 @@
 
   const first = 'Wes';
   const last = 'Bos';
+  const sentence = addDict`Hello, my name is ${first} ${last}. I love to code ${'HTML'}, ${'JS'} and ${'CSS'} all day and all night long!`;
+
+  const bio = document.querySelector('.bio');
+  const p = document.createElement('p');
+  p.innerHTML = sentence;
+  bio.appendChild(p);
+
+function addDict(strings, ...values){
+    const abb = values.map(value => {
+      if(dict[value]){
+        return `<abbr title="${dict[value]}">${value}</abbr>`
+      }
+    return value;
+    });
+    return strings.reduce((sentance, string, i)=>{
+      return `${sentance}${string}${abb[i]||''}`;
+    },'');
+  }
 
 </script>
 </body>

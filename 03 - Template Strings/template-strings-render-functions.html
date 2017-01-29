@@ -13,11 +13,12 @@
   };
 
   function renderKeywords(keywords) {
-    return `
-      <ul>
-        ${keywords.map(keyword => `<li>${keyword}</li>`).join('')}
-      </ul>
-    `;
+//    return `
+//      <ul>
+//        ${keywords.map(keyword => `<li>${keyword}</li>`).join('')}
+//      </ul>
+//    `;
+    return `Tastes: ${keywords.join(', ')}`;
   }
 
   const markup = `
