@@ -6,6 +6,7 @@
 </head>
 <body>
 <script>
+
   function convertCurrency(amount) {
     const converted = {
       USD: amount * 0.76,
@@ -15,7 +16,12 @@
     };
     return converted;
   }
+  // 利用 destructuring 直接取值 可以不管順序 也可以只取想要的
+  const {GPB, USD} = convertCurrency(100);
+  console.log(USD);
+  console.log(GPB);
 
+  // 利用 destructing object 來讓給參數時可以不需要按照順序
   function tipCalc({ total = 100, tip = 0.15, tax = 0.13 } = {}) {
     return total + (tip * total) + (tax * total);
   }
