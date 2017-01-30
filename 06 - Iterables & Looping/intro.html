@@ -27,20 +27,23 @@
   //   console.log(cuts[i]);
   // }
 
+  // can't abort or skip items
   // cuts.forEach((cut) => {
   //   console.log(cut);
   //   if(cut === 'Brisket') {
-  //     continue;
+  //     continue; or break; won't work
   //   }
   // });
 
-  // for (const index in cuts) {
-  //   console.log(cuts[index]);
-  // }
+  // 會顯示上面加的 shuffle method
+//   for (const index in cuts) {
+//     console.log(cuts[index]);
+//   }
 
   for (const cut of cuts) {
     if(cut === 'Brisket') {
-      continue;
+      //continue; //skip
+       break; //break
     }
     console.log(cut);
   }

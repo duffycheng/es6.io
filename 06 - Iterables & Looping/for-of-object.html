@@ -7,6 +7,7 @@
 <body>
 
 <script>
+  // 目前 object.entries will include in ES2017 (stage 4 now), can use polyfill
   const apple = {
     color: 'Red',
     size: 'Medium',
@@ -17,6 +18,11 @@
   for (const prop in apple) {
     const value = apple[prop];
     console.log(value, prop);
+  }
+  //
+  for(const key of Object.keys(apple)){
+    const value = apple[key];
+    console.log(key, value);
   }
 
 </script>
