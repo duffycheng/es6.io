@@ -8,13 +8,16 @@
 <script>
   const inventors = ['Einstein', 'Newton', 'Galileo'];
   const newInventors = ['Musk', 'Jobs'];
+  //old way, 利用apply newInventors變成變數去執行function
+  //inventors.push.apply(inventors, newInventors);
+  //es6
   inventors.push(...newInventors);
   console.log(inventors);
 
   const name = ['Wes', 'Bos'];
 
   function sayHi(first, last) {
-    alert(`Hey there ${first} ${last}`);
+    console.log(`Hey there ${first} ${last}`);
   }
 
   sayHi(...name);

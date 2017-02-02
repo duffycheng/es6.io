@@ -7,10 +7,14 @@
 <body>
 <script>
 
+  // apply to anything iteratiable
   const featured = ['Deep Dish', 'Pepperoni', 'Hawaiian'];
   const specialty = ['Meatzza', 'Spicy Mama', 'Margherita'];
 
   const pizzas = [...featured, 'veg', ...specialty];
+  //only reference
+  const fridayPizzasTemp = pizzas;
+  // new array
   const fridayPizzas = [...pizzas];
 
   const deepDish = {

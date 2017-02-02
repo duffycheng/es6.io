@@ -12,6 +12,8 @@
   </div>
 <script>
   const people = Array.from(document.querySelectorAll('.people p'));
+  // NodeList 轉 array
+  const people2 = [...document.querySelectorAll('.people p')];
   const names = people.map((person) => person.textContent );
 
   const deepDish = {
@@ -19,9 +21,9 @@
     size: 'Medium',
     ingredients: ['Marinara', 'Italian Sausage', 'Dough', 'Cheese']
   };
-
+  // true copy, 又結合資料
   const shoppingList = ['Milk', 'Flour', ...deepDish.ingredients];
-  // console.log(shoppingList);
+//   console.log(shoppingList);
 
   const comments = [
     { id: 209384, text: 'I love your dog!' },
@@ -31,7 +33,7 @@
   ];
   const id = 632429;
   const commentIndex = comments.findIndex(comment => comment.id === id);
-
+  //  移除此index的資料又不影響原本array
   const newComments = [...comments.slice(0,commentIndex), ...comments.slice(commentIndex + 1)];
   console.log(newComments);
 

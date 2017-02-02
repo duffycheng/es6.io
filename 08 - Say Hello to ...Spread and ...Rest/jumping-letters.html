@@ -30,7 +30,10 @@
   <h2 class="jump">SPREADS!</h2>
 
 <script>
-  
+  const jumpNode = document.querySelector('.jump');
+  const animateText = [...jumpNode.textContent]
+                      .map(text=> `<span>${text}</span>`).join("");
+  jumpNode.innerHTML = animateText;
 </script>
 </body>
 </html>
