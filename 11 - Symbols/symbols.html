@@ -6,8 +6,23 @@
 </head>
 <body>
 <script>
+  // for unique key or immutable data
   const wes = Symbol('Wes');
   const person = Symbol('Wes');
+  console.log("wes === person", wes === person); // false
+  console.log("wes == person", wes == person); // false
+
+  const classRoomOld = {
+    'Mark' : { grade: 50, gender: 'male' },
+    'olivia': { grade: 80, gender: 'female' },
+    'olivia': { grade: 90, gender: 'female' },
+  };
+
+  //只拿到兩組資料
+  for (const person in classRoomOld) {
+    console.log(person);
+    console.log(typeof person);
+  }
 
   const classRoom = {
     [Symbol('Mark')] : { grade: 50, gender: 'male' },
@@ -15,13 +30,17 @@
     [Symbol('olivia')]: { grade: 80, gender: 'female' },
   };
 
+  // symbol is immutable, can not put in loop
   for (const person in classRoom) {
-    console.log(person);
+    console.log(person); // no data return
   }
 
   const syms = Object.getOwnPropertySymbols(classRoom);
+  console.log(syms) // 拿到symbol array 無法使用
+  // 取得data
   const data = syms.map(sym => classRoom[sym]);
   console.log(data);
+
 
 </script>
 </body>
