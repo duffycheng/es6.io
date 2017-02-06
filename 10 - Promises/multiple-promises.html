@@ -31,6 +31,7 @@
   Promise
     .all([postsPromise, streetCarsPromise])
     .then(responses => {
+     // 把 reponses array資料處理過 再傳出來
       return Promise.all(responses.map(res => res.json()))
     })
     .then(responses => {

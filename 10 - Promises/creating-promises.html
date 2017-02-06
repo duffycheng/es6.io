@@ -7,7 +7,9 @@
 <body>
 <script>
   const p = new Promise((resolve, reject) => {
+//            resolve('success');
     setTimeout(() => {
+      // error object 可以抓到哪裡吐出錯誤
       reject(Error('Err wes isn\'t cool'));
     }, 1000);
   });
