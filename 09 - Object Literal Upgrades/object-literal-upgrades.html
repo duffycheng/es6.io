@@ -19,6 +19,7 @@
   };
   console.log(dog);
 
+  // 縮寫不需要 : function
   const modal = {
     create(selector) {
 
@@ -29,7 +30,7 @@
     close(goodbye) {
 
     }
-  }
+  };
 
   function invertColor(color) {
       return '#' + ("000000" + (0xFFFFFF ^ parseInt(color.substring(1),16)).toString(16)).slice(-6);
@@ -43,6 +44,8 @@
     [`${key}Opposite`]: invertColor(value)
   };
 
+  console.log(tShirt); //Object {pocketColor: "#ffc600", pocketColorOpposite: "#0039ff"}
+
   const keys = ['size', 'color', 'weight'];
   const values = ['medium', 'red', 100];
 
@@ -52,6 +55,7 @@
     [keys.shift()]: values.shift(),
   }
   console.log(shirt);
+  //Object {size: "medium", color: "red", weight: 100}
 
 
 </script>
