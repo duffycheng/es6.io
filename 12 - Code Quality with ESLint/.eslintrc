@@ -4,9 +4,11 @@
     "browser": true
   },
   "extends": "airbnb",
+//  "extends": "eslint:recommended",
   "rules": {
-    "no-console": 0,
+    // 0 off, 1 warn, 2 error
+    "no-console": 1,
     "no-unused-vars": 1
   },
-  "plugins": ["html", "markdown"]
+//  "plugins": ["html", "markdown"]
 }

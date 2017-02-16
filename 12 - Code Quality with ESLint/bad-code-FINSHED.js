@@ -33,6 +33,7 @@ ga.track();
 twttr.trackConversion();
 
 /* eslint-disable */
+//  Array.prototype.includes 是 polyfill 為了future forward 先關掉eslint
 if (!Array.prototype.includes) {
   Array.prototype.includes = function(searchElement /*, fromIndex*/ ) {
     'use strict';
@@ -61,4 +62,5 @@ if (!Array.prototype.includes) {
     return false;
   };
 }
+// 再度開啟
 /* eslint-enable */
