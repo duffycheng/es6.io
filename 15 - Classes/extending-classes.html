@@ -32,8 +32,24 @@
     }
   }
 
+// don't go to deep, maybe 2 or 3
+class Cat extends Animal{
+  constructor(name, furColor){
+    // set in Animal Class
+    super(name);
+
+    this.furColor = furColor;
+  }
+  info(){
+    console.log(`${this.name}'s fur is ${this.furColor}`);
+  }
+}
+
   const rhino = new Animal('Rhiney');
   const snickers = new Dog('Snickers', 'King Charles');
+
+  const rob = new Cat('Rob', 'brown');
+  console.log(rob.info());
 
 </script>
 </body>

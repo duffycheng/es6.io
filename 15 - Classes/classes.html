@@ -6,21 +6,58 @@
 </head>
 <body>
 <script>
-  function Dog(name, breed) {
+// prototypal Inheritance
+  function Dog(name, breed){
     this.name = name;
     this.breed = breed;
   }
 
-  Dog.prototype.bark = function() {
-    console.log(`Bark Bark! My name is ${this.name}`);
-  };
+  Dog.prototype.bark = function(){
+   console.log(`Bark! My name is ${this.name} and a ${this.breed}`);
+  }
+    Dog.prototype.cuddle = function(){
+    console.log("鑽鑽");
+  }
 
-  Dog.prototype.cuddle = function() {
-    console.log(`I love you owner!`);
-  };
+  const snickers = new Dog('snickers', 'King Charles');
+  const sunny = new Dog('sunny', 'Golden Doodle');
 
-  const snickers = new Dog('Snickers', 'King Charles');
-  const sunny = new Dog('Sunny', 'Golden Doodle');
+
+// es6 class
+const Cat = class {
+  constructor(name){
+    this.name = name;
+  }
+
+  play(){
+    console.log(`${this.name} is having fun!`);
+  }
+  // static 只能在 Cat.info() 呼叫, Snow 不行
+  static info(){
+    console.log('cat is cute');
+  }
+  // getter
+  get description(){
+    return `This cat's name is ${this.name}`; 
+  }
+
+  set nickname(value){
+    // setter 名城不能再用一次
+    this.nick = value.trim();
+  }
+  get nickname(){
+    // setter 名城不能再用一次
+    return this.nick.toUpperCase();
+  }
+}
+
+const Snow = new Cat('Snow');
+
+//getter and setter
+console.log(Snow.description);
+Snow.nickname = "  WOW  ";
+console.log(Snow.nickname);
+
 
 </script>
 </body>

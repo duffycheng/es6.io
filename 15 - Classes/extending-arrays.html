@@ -8,6 +8,8 @@
 <script>
   class MovieCollection extends Array {
     constructor(name, ...items) {
+      // 組成array, "extends" needs to create the thing we extend first
+      //super(items); 為變成array in array, "...items" 是spread items and make each of them an item in the array 
       super(...items);
       this.name = name;
     }
@@ -27,6 +29,20 @@
   );
 
   movies.add({ name: 'Titanic', stars: 5 });
+
+// for in
+  for (const movie in movies){
+    console.log(movie);
+  }
+  // 0 1 2 3 4 name (所有key)
+
+// for of
+  for (const movie of movies){
+    console.log(movie);
+  }
+  // 5個object, 得到真正想要的內容
+
+  console.table(movies.topRated(2));
 
 </script>
 </body>
