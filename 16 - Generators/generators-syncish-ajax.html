@@ -8,16 +8,18 @@
 <script>
 
   function ajax(url) {
+    // dataGen.next(data) 這邊是將Genertators往下一步走
     fetch(url).then(data => data.json()).then(data => dataGen.next(data))
   }
 
   function* steps() {
+    // 只有ajax 完成回傳值 才會到下一個
     console.log('fetching beers');
     const beers = yield ajax('http://api.react.beer/v2/search?q=hops&type=beer');
     console.log(beers);
 
-    console.log('fetching wes');
-    const wes = yield ajax('https://api.github.com/users/');
+    console.log('fetching my Github');
+    const wes = yield ajax('https://api.github.com/users/duffycheng');
     console.log(wes);
 
     console.log('fetching fat joe');

@@ -6,9 +6,36 @@
 </head>
 <body>
 <script>
+// function* 代表 Generators
+// yield from a function, return the item until the function is call again, call 一次回一個
+
+function* listName(){
+  yield 'Bob';
+  yield 'Tom';
+  yield 'Jake';
+}
+
+const names = listName();
+
+// console.log(names); Chrome 會停住一陣子 沒有東西回傳
+console.log(names.next());
+console.log(names.next());
+console.log(names.next());
+console.log(names.next());
+
+/*
+Object {value: "Bob", done: false}
+Object {value: "Tom", done: false}
+Object {value: "Jake", done: false}
+Object {value: undefined, done: true}
+*/
+
+//-----------------------------------------------------
+
   function* listPeople() {
+    // will keep variable until finish
     let i = 0;
-    yield i;
+    yield i; 
     i++;
     yield i;
     i++;
@@ -17,6 +44,18 @@
 
   const people = listPeople();
 
+console.log(people.next());
+console.log(people.next());
+console.log(people.next());
+console.log(people.next());
+
+/*
+Object {value: 0, done: false}
+Object {value: 1, done: false}
+Object {value: 2, done: false}
+Object {value: undefined, done: true}
+*/
+//-----------------------------------------------------
   const inventors = [
     { first: 'Albert', last: 'Einstein', year: 1879 },
     { first: 'Isaac', last: 'Newton', year: 1643 },
@@ -35,6 +74,34 @@
   }
 
   const inventorGen = loop(inventors);
+
+  console.log(inventorGen.next());
+  console.log(inventorGen.next());
+  console.log(inventorGen.next());
+  console.log(inventorGen.next());
+  console.log(inventorGen.next());
+  console.log(inventorGen.next());
+  console.log(inventorGen.next());
+  console.log(inventorGen.next());
+
+  /** 第一次會包含 console.log(inventors); 整個array
+   * [Object, Object, Object, Object, Object, Object, Object]
+      Object {value: Object, done: false}
+
+      Object {value: Object, done: false}
+      
+      Object {value: Object, done: false}
+      
+      Object {value: Object, done: false}
+      
+      Object {value: Object, done: false}
+      
+      Object {value: Object, done: false}
+      
+      Object {value: Object, done: false}
+      
+      Object {value: undefined, done: true}
+   * /
 
 
 </script>
