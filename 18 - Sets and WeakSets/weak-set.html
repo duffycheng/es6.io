@@ -6,6 +6,10 @@
 </head>
 <body>
 <script>
+// weak set only contains object
+// can not loop
+// no clear method
+// 被清掉. 會從weak set移除, 可能需要幾秒被gabage collect
   let dog1 = { name: 'Snickers', age: 3 };
   let dog2 = { name: 'sunny', age: 1 };
 

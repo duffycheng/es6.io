@@ -6,6 +6,7 @@
 </head>
 <body>
 <script>
+  // 類似 special array
   const people = new Set();
   people.add('Wes');
   people.add('Snickers');
@@ -14,11 +15,37 @@
   for (const person of  people) {
     console.log(person);
   }
+  /* 取得值
+  Wes
+  Snickers
+  Kait
+  */
 
+  console.log(people.size);
+  console.log(people);
+  console.log(people.delete('Wes'));
+  console.log(people.size);
+  console.log(people);
+  // people.clear() 全清
+
+  const it = people.values() //  SetIterator {"Wes", "Snickers", "Kait"}
+
+  it.next() // 直到finish
+
+// set 是一系列 value, entries 是一樣資料兩次 (和map同api)
+  console.log(people.keys()); // SetIterator {"Wes", "Snickers", "Kait"}
+  console.log(people.entries()); // SetIterator {["Wes", "Wes"], ["Snickers", "Snickers"], ["Kait", "Kait"]}
+
+// pass a array to create a set
   const students = new Set(['Wes', 'Kara', 'Tony']);
+
+  console.log(students.has('Wes'));
 
   const dogs = ['Snickers', 'Sunny'];
   const dogSet = new Set(dogs);
+
+  
+
 
 </script>
 </body>

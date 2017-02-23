@@ -13,13 +13,17 @@
   brunch.add('Simone');
   // ready to open!
   const line = brunch.values();
+  console.log(line.next().value); // line.next() gives generator
   console.log(line.next().value);
-  console.log(line.next().value);
+  console.log(brunch);
+  console.log(line); // next()後剩誰
   brunch.add('Heather');
   brunch.add('Snickers');
   console.log(line.next().value);
   console.log(line.next().value);
   console.log(line.next().value);
+  console.log(brunch);
+  console.log(line); 
 
 </script>
 </body>
