@@ -6,6 +6,8 @@
 </head>
 <body>
 <script>
+// array之於set, 類似 map 之於 map
+// has, get, delete
   const dogs = new Map();
 
   dogs.set('Snickers', 3);
@@ -14,6 +16,16 @@
 
   dogs.forEach((val, key) => console.log(val, key));
 
+  for (const dog of dogs) {
+    console.log(dog);
+  }
+  /* 得到 array
+  ["Snickers", 3]
+  ["Sunny", 2]
+  ["Hugo", 10]
+  */
+
+//desconstruct 取得值
   for (const [key, val] of dogs) {
     console.log(key, val);
   }
