@@ -7,9 +7,12 @@
 <body>
 <script>
   const person = { name: 'Wes', age: 100 };
+ // second parameterr is trap, check document to find all the method in the trap 
+ // 挾持原來funciton 給予新的處理
   const personProxy = new Proxy(person, {
     get(target, name) {
       // console.log('someone is asking for ', target, name);
+      // target 裡的 name 大寫
       return target[name].toUpperCase();
     },
     set(target, name, value) {
@@ -20,6 +23,7 @@
   });
 
   personProxy.name = 'Wesley';
+  
 </script>
 </body>
 </html>

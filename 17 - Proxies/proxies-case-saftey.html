@@ -6,8 +6,11 @@
 </head>
 <body>
 <script>
+
+// 拼字錯誤時 告知
   const safeHandler = {
     set(target, name, value) {
+      // 如果只是大小寫差別 回吐錯誤訊息告知
       const likeKey = Object.keys(target).find(k => k.toLowerCase() === name.toLowerCase());
 
       if (!(name in target) && likeKey) {
